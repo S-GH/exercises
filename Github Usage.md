@@ -65,17 +65,15 @@ $ git push origin master
 ## Branch 관리
 - 종류
     - Master Branch
-    배포(Release) 이력을 관리하기 위해 사용. 배포 가능한 상태만 관리
+        배포(Release) 이력을 관리하기 위해 사용. 배포 가능한 상태만 관리
     - Develop Branch
-    다음 출시 버전을 개발하는 브랜치 배포 가능하다 판단되면 Master Branch에 Merge 
+        다음 출시 버전을 개발하는 브랜치 배포 가능하다 판단되면 Master Branch에 Merge 
     - Feature Brance
-    기능을 개발하는 브랜치, Develop Branch로부터 분기된것 완료되면 develop Branch에 Merge한다.
+        기능을 개발하는 브랜치, Develop Branch로부터 분기된것 완료되면 develop Branch에 Merge한다.
     ```shell
     // feature 브랜치(feature/login)를 'develop' 브랜치('master' 브랜치에서 따는 것이 아니다!)에서 분기
     $ git checkout -b feature/login develop
-
     /* ~ 새로운 기능에 대한 작업 수행 ~ */
-
     /* feature 브랜치에서 모든 작업이 끝나면 */
     // 'develop' 브랜치로 이동한다.
     $ git checkout develop
@@ -91,3 +89,15 @@ $ git push origin master
     - Release Branch
     
     - Hotfix Branch
+
+
+## 여러곳에서 github 접근 : clone
+> clone을 만들어 여러곳에서 commit을 할 수 있다.
+```shell
+$ git clone 'https://github.com/S-GH/Exercises.git'
+$ git remote -v //해당 폴더에서 연결된 원격저장소 주소 출력
+// 변경한 뒤
+$ git push origin master
+// 변경한 코드 다른곳에서 불러오기
+$ git pull origin master
+```
